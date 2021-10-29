@@ -7,6 +7,7 @@ package com.violetauseche.ciclo3.reto3.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 import javax.persistence.*;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  *
@@ -19,13 +20,14 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    private String status = "created";
 
     @ManyToOne
     @JoinColumn(name = "idCabin")
-    @JsonIgnoreProperties({"messages", "reservations", "category"})
+    @JsonIgnoreProperties({"reservations"})
     private Cabin cabin;
 
     @ManyToOne
@@ -33,12 +35,14 @@ public class Reservation {
     @JsonIgnoreProperties({"messages", "reservations", "category"})
     private Client client;
 
-    public Integer getId() {
-        return id;
+    private String score;
+
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Date getStartDate() {
@@ -57,6 +61,14 @@ public class Reservation {
         this.devolutionDate = devolutionDate;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Cabin getCabin() {
         return cabin;
     }
@@ -73,4 +85,13 @@ public class Reservation {
         this.client = client;
     }
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+    
+    
 }

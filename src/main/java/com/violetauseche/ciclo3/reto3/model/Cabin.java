@@ -21,9 +21,14 @@ public class Cabin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String description;
     private String brand;
     private Integer rooms;
+    private String description;
+    
+    @ManyToOne
+    @JoinColumn(name = "idCategory")
+    @JsonIgnoreProperties("cabins")
+    private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "cabin")
     @JsonIgnoreProperties({"cabin", "client"})
@@ -33,10 +38,6 @@ public class Cabin {
     @JsonIgnoreProperties({"cabin", "client"})
     private List<Reservation> reservations;
     
-    @ManyToOne
-    @JoinColumn(name = "idCategory")
-    @JsonIgnoreProperties("cabins")
-    private Category category;
 
     public Integer getId() {
         return id;

@@ -9,6 +9,7 @@ function consultarCategory() {
     type: "GET",
     datatype: "JSON",
     success: function (response) {
+      console.log(response);
       let tableResponse = "<table class='table table-striped table-bordered'>";
       tableResponse += "<thead>";
       tableResponse += "<tr>";
@@ -46,7 +47,8 @@ function agregarCategory() {
       data: dataToSend,
       datatype: "JSON",
       contentType: "application/json",
-      success: function (respuesta) {
+      success: function (response) {
+        console.log(response);
         consultarCategory();
         modalAlert("Guardado exitoso", "Agregado Satisfactoriamente");
       },
@@ -70,6 +72,7 @@ function consultarCabin() {
     type: "GET",
     datatype: "JSON",
     success: function (response) {
+      console.log(response);
       let tableResponse = "<table class='table table-striped table-bordered'>";
       tableResponse += "<thead>";
       tableResponse += "<tr>";
@@ -122,7 +125,8 @@ function agregarCabin() {
       data: dataToSend,
       datatype: "JSON",
       contentType: "application/json",
-      success: function (respuesta) {
+      success: function (response) {
+        console.log(response);
         consultarCabin();
         modalAlert("Guardado exitoso", "Agregado Satisfactoriamente");
       },
@@ -197,7 +201,8 @@ function agregarClient() {
       data: dataToSend,
       datatype: "JSON",
       contentType: "application/json",
-      success: function (respuesta) {
+      success: function (response) {
+        console.log(response);
         consultarClient();
         modalAlert("Guardado exitoso", "Agregado Satisfactoriamente");
       },
@@ -222,6 +227,7 @@ function consultarMessage() {
     type: "GET",
     datatype: "JSON",
     success: function (response) {
+      console.log(response);
       let tableResponse = "<table class='table table-striped table-bordered'>";
       tableResponse += "<thead>";
       tableResponse += "<tr>";
@@ -235,7 +241,7 @@ function consultarMessage() {
       for (i = 0; i < response.length; i++) {
         tableResponse += "<tbody>";
         tableResponse += "<tr>";
-        tableResponse += "<th scope='row'>" + response[i].id + "</th>";
+        tableResponse += "<th scope='row'>" + response[i].idMessage + "</th>";
         tableResponse += "<td>" + response[i].messageText + "</td>";
         tableResponse += "<td>" + response[i].client.idClient + "</td>";
         tableResponse += "<td>" + response[i].cabin.id + "</td>";
@@ -266,7 +272,8 @@ function agregarMessage() {
       data: dataToSend,
       datatype: "JSON",
       contentType: "application/json",
-      success: function (respuesta) {
+      success: function (response) {
+        console.log(response);
         consultarMessage();
         modalAlert("Guardado exitoso", "Agregado Satisfactoriamente");
       },
@@ -296,6 +303,7 @@ function consultarReservation() {
     type: "GET",
     datatype: "JSON",
     success: function (response) {
+      console.log(response);
       let tableResponse = "<table class='table table-striped table-bordered'>";
       tableResponse += "<thead>";
       tableResponse += "<tr>";
@@ -310,7 +318,7 @@ function consultarReservation() {
       for (i = 0; i < response.length; i++) {
         tableResponse += "<tbody>";
         tableResponse += "<tr>";
-        tableResponse += "<th scope='row'>" + response[i].id + "</th>";
+        tableResponse += "<th scope='row'>" + response[i].idReservation + "</th>";
         tableResponse += "<td>" + response[i].startDate + "</td>";
         tableResponse += "<td>" + response[i].devolutionDate + "</td>";
         tableResponse += "<td>" + response[i].client.idClient + "</td>";
@@ -344,7 +352,8 @@ function agregarReservation() {
       data: dataToSend,
       datatype: "JSON",
       contentType: "application/json",
-      success: function (respuesta) {
+      success: function (response) {
+        console.log(response);
         consultarReservation();
         modalAlert("Guardado exitoso", "Agregado Satisfactoriamente");
       },
