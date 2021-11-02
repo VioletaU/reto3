@@ -42,4 +42,20 @@ public class AdminService {
             }
         }
     }
+    public List<Admin> delete(int id) {
+        return adminRepository.delete(id);
+    }
+
+    public Admin update(Admin r) {
+        if (r.getId() == null) {
+            return adminRepository.update(r);
+        } else {
+            Optional<Admin> paux = adminRepository.getAdmin(r.getId());
+            if (paux.isEmpty()) {
+                return adminRepository.update(r);
+            } else {
+                return r;
+        }
+    }
+}
 }

@@ -33,4 +33,14 @@ public class AdminRepository {
     public Admin save(Admin c) {
         return adminCrudRepository.save(c);
     }
+      public List<Admin> delete(int id) {
+        adminCrudRepository.deleteById(id);
+        return getAll();
+    }
+
+    public Admin update(Admin r) {
+        delete(r.getId());
+        return adminCrudRepository.save(r);
+    }
 }
+

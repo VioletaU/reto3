@@ -28,13 +28,25 @@ public class CabinController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Cabin> getReservation(@PathVariable("id") int id) {
-        return cabinService.getReservation(id);
+    public Optional<Cabin> getCabin(@PathVariable("id") int id) {
+        return cabinService.getCabin(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Cabin save(@RequestBody Cabin r) {
         return cabinService.save(r);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id) {
+        return cabinService.delete(id);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cabin update(@RequestBody Cabin r) {
+        return cabinService.update(r);
     }
 }

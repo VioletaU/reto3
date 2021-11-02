@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <title>Reto 3</title>
+  </head>
+  <body>
+    <div class="content-page">
+      <div class="content-title">
+        <h1>Reservación de cabañas online</h1>
+      </div>
+      <div class="content-navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./cabanias.html">Cabañas</a></li>
+          <li><a href="./clientes.html">Clientes</a></li>
+          <li><a href="./mensajes.html">Mensajes</a></li>
+          <li><a href="./reservaciones.html">Reservaciones</a></li>
+          <li><a href="./reportes.html">Reportes</a></li>
+        </ul>
+      </div>
+      <!-- Categorias -->
+      <div class="content-general">
+        <h2>Categorias</h2>
+        <div class="content-form">
+          <div class="content-row">
+            <div class="content-column" id="divIdCategory">
+              <div>
+                <label for="id">Id</label>
+                <input
+                  type="text"
+                  name="id"
+                  id="id"
+                  placeholder="Id"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Nombre" />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="description">Descripcion</label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Descripcion"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-btn-actualizar" id="divIdbtnCategory">
+          <div>
+            <div>
+              <button type="button" onclick="actualizarCategory()">
+                Actualizar
+              </button>
+              <button type="button" onclick="limpiarCategory()">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="content-table">
+          <div class="content-row">
+            <div class="content-column" id="resultadoCategory"></div>
+          </div>
+        </div>
+        <div>
+          <button type="button" onclick="agregarCategory()">Guardar</button>
+          <button type="button" onclick="consultarCategory()">Consultar</button>
+        </div>
+      </div>
+
+      <div class="modal" id="modalAlertCategory">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalAlertLabel"></h2>
+          </div>
+          <div class="modal-body">
+            <p id="textMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="hiddenModal('modalAlertCategory')">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/fuctions.js"></script>
+  </body>
+</html>

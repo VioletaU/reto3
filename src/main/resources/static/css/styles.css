@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.content-page {
+  background-color: rgb(235, 235, 235);
+  width: 100vw;
+  height: 100vh;
+}
+.content-title {
+  background-color: rgb(215, 190, 238);
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+}
+.content-navbar {
+  background-color: rgb(178, 183, 248);
+  text-align: center;
+}
+.content-navbar > ul {
+  display: flex;
+  justify-content: center;
+}
+.content-navbar > ul > li {
+  list-style: none;
+}
+.content-navbar > ul > li > a {
+  background: rgb(155, 162, 253);
+  padding: 10px 25px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
+}
+.content-navbar > ul > li > a:hover {
+  background: rgb(137, 143, 236);
+}
+.content-general {
+  margin-top: 15px;
+  padding: 10px 10vw;
+}
+.content-form {
+  margin: 10px 0;
+}
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.content-column {
+  flex: 1;
+}
+.content-btn-actualizar {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+input {
+  display: block;
+  width: 90%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+a:visited {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  background: rgb(155, 162, 253);
+  padding: 10px 25px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
+}
+button:hover {
+  background: rgb(137, 143, 236);
+}
+.content-table {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+table {
+  display: table;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: rgb(234, 228, 255);
+}
+table > thead {
+  display: table-header-group;
+  border: 1px solid black;
+}
+table > thead > tr {
+  display: table-row;
+}
+table > thead > tr > th,
+table > tbody > tr > td {
+  display: table-cell;
+  padding: 5px 10px;
+  border: 1px solid black;
+}
+.modal {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal.active {
+  display: block;
+}
+.modal-dialog {
+  width: 35vw;
+  margin: 0 auto;
+  margin-top: 15vh;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 15px black;
+  border: 1px solid gray;
+}
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.modal-body {
+  padding: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: end;
+}
+.content-report {
+  padding: 10px;
+}

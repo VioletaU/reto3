@@ -23,18 +23,30 @@ public class ScoreController {
     private ScoreService scoreService;
 
     @GetMapping("/all")
-    public List<Score> getReservations() {
+    public List<Score> get() {
         return scoreService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Score> getReservation(@PathVariable("id") int id) {
-        return scoreService.getReservation(id);
+    public Optional<Score> getScore(@PathVariable("id") int id) {
+        return scoreService.getScore(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Score save(@RequestBody Score r) {
+        return scoreService.save(r);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public List<Score> delete(@PathVariable("id") int id) {
+        return scoreService.delete(id);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Score update(@RequestBody Score r) {
         return scoreService.save(r);
     }
 }

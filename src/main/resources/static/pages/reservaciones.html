@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <title>Reto 3</title>
+  </head>
+  <body>
+    <div class="content-page">
+      <div class="content-title">
+        <h1>Reservación de cabañas online</h1>
+      </div>
+      <div class="content-navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./categorias.html">Categorias</a></li>
+          <li><a href="./cabanias.html">Cabañas</a></li>
+          <li><a href="./clientes.html">Clientes</a></li>
+          <li><a href="./mensajes.html">Mensajes</a></li>
+          <li><a href="./reportes.html">Reportes</a></li>
+        </ul>
+      </div>
+
+      <!-- Reservaciones -->
+      <div class="content-general">
+        <h4>Reservaciones</h4>
+        <div class="content-form">
+          <div class="content-row">
+            <div class="content-column" id="divIdReservation">
+              <div>
+                <label for="idReservation">id Reservacion</label>
+                <input
+                  type="number"
+                  name="idReservation"
+                  id="idReservation"
+                  placeholder="id Reservacion"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="startDate">Fecha de inicio</label>
+                <input
+                  type="date"
+                  name="startDate"
+                  id="startDate"
+                  placeholder="Fecha de inicio"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="devolutionDate">Fecha devolucion</label>
+                <input
+                  type="date"
+                  name="devolutionDate"
+                  id="devolutionDate"
+                  placeholder="Fecha devolucion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="content-row">
+            <div class="content-column">
+              <div>
+                <label for="clientIdReservation">Cliente</label>
+                <input
+                  type="number"
+                  name="clientIdReservation"
+                  id="clientIdReservation"
+                  placeholder="Cliente"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="cabinIdReservation">Cabaña</label>
+                <input
+                  type="number"
+                  name="cabinIdReservation"
+                  id="cabinIdReservation"
+                  placeholder="Cabaña"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-btn-actualizar" id="divbtnReservation">
+          <div class="content-row">
+            <div class="content-column">
+              <button type="button" onclick="actualizarReservation()">
+                Actualizar
+              </button>
+              <button type="button" onclick="limpiarReservation()">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="content-table">
+          <div class="content-row">
+            <div class="content-column" id="resultadoReservation"></div>
+          </div>
+        </div>
+        <div>
+          <button type="button" onclick="agregarReservation()">Guardar</button>
+          <button type="button" onclick="consultarReservation()">
+            Consultar
+          </button>
+        </div>
+      </div>
+
+      <div class="modal" id="modalAlertReservation">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalAlertLabel"></h2>
+          </div>
+          <div class="modal-body">
+            <p id="textMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="hiddenModal('modalAlertReservation')">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/fuctions.js"></script>
+  </body>
+</html>

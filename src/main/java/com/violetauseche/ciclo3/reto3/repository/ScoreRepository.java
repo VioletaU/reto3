@@ -33,4 +33,14 @@ public class ScoreRepository {
     public Score save(Score r) {
         return scoreCrudRepository.save(r);
     }
+
+    public List<Score> delete(int id) {
+        scoreCrudRepository.deleteById(id);
+        return getAll();
+    }
+
+    public Score update(Score r) {
+        delete(r.getId());
+        return scoreCrudRepository.save(r);
+    }
 }

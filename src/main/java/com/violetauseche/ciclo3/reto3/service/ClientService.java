@@ -33,7 +33,7 @@ public class ClientService {
     }
 
     public Client save(Client c) {
-        if (c.getIdClient()== null) {
+        if (c.getIdClient() == null) {
             return clientRepository.save(c);
         } else {
             Optional<Client> paux = clientRepository.getClient(c.getIdClient());
@@ -43,5 +43,39 @@ public class ClientService {
                 return c;
             }
         }
+    }
+
+    public Client update(Client client){
+        if(client.getIdClient()!=null){
+            Optional<Client> evt = clientRepository.getClient(client.getIdClient());
+            if(!evt.isEmpty()){
+                if(client.getEmail()!=null){
+                    evt.get().setEmail(client.getEmail());
+                }
+                if(client.getName()!=null){
+                    evt.get().setName(client.getName());
+                }
+                if(client.getAge()!=null){
+                    evt.get().setAge(client.getAge());
+                }
+                if(client.getPassword()!=null){
+                    evt.get().setPassword(client.getPassword());
+                }
+                clientRepository.save(evt.get());
+                return evt.get();
+            }else{
+                return client;
+            }
+        }else{
+            return client;
+        }
+    }
+
+    public boolean delete(int idClient) {
+        Boolean result = getClient(idClient).map(client -> {
+            clientRepository.delete(client);
+            return true;
+        }).orElse(false);
+        return result;
     }
 }

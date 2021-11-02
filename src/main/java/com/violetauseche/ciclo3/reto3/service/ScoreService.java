@@ -26,7 +26,7 @@ public class ScoreService {
         return (List<Score>) scoreRepository.getAll();
     }
 
-    public Optional<Score> getReservation(int id) {
+    public Optional<Score> getScore(int id) {
         return scoreRepository.getScore(id);
     }
 
@@ -37,6 +37,22 @@ public class ScoreService {
             Optional<Score> paux = scoreRepository.getScore(r.getId());
             if (paux.isEmpty()) {
                 return scoreRepository.save(r);
+            } else {
+                return r;
+            }
+        }
+    }
+    public List<Score> delete(int id) {
+        return scoreRepository.delete(id);
+    }
+
+    public Score update(Score r) {
+        if (r.getId() == null) {
+            return scoreRepository.update(r);
+        } else {
+            Optional<Score> paux = scoreRepository.getScore(r.getId());
+            if (paux.isEmpty()) {
+                return scoreRepository.update(r);
             } else {
                 return r;
             }

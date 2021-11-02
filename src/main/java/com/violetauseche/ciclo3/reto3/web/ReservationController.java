@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 import com.violetauseche.ciclo3.reto3.model.Reservation;
+import com.violetauseche.ciclo3.reto3.reports.ContadorClients;
+import com.violetauseche.ciclo3.reto3.reports.StatusReservation;
 import com.violetauseche.ciclo3.reto3.service.ReservationService;
 
 @RestController
@@ -38,4 +40,30 @@ public class ReservationController {
         return reservationService.save(r);
     }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation update(@RequestBody Reservation reservation) {
+        return reservationService.update(reservation);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int idReservation) {
+        return reservationService.delete(idReservation);
+    }
+
+    @GetMapping("/report-status")
+    public StatusReservation getReservas() {
+        return reservationService.reporteStatusServicio();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservasTiempo(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo) {
+        return reservationService.reporteTiempoServicio(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<ContadorClients> getClientes() {
+        return reservationService.reporteClientesServicio();
+    }
 }

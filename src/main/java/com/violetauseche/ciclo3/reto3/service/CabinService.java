@@ -26,7 +26,7 @@ public class CabinService {
         return (List<Cabin>) cabinRepository.getAll();
     }
 
-    public Optional<Cabin> getReservation(int id) {
+    public Optional<Cabin> getCabin(int id) {
         return cabinRepository.getCabin(id);
     }
 
@@ -41,5 +41,42 @@ public class CabinService {
                 return r;
             }
         }
+    }
+
+    public Cabin update(Cabin cabin) {
+        if (cabin.getId() != null) {
+            Optional<Cabin> evt = cabinRepository.getCabin(cabin.getId());
+            if (!evt.isEmpty()) {
+                if (cabin.getName() != null) {
+                    evt.get().setName(cabin.getName());
+                }
+                if (cabin.getBrand() != null) {
+                    evt.get().setBrand(cabin.getBrand());
+                }
+                if (cabin.getRooms() != null) {
+                    evt.get().setRooms(cabin.getRooms());
+                }
+                if (cabin.getDescription() != null) {
+                    evt.get().setDescription(cabin.getDescription());
+                }
+                if (cabin.getCategory() != null) {
+                    evt.get().setCategory(cabin.getCategory());
+                }
+                cabinRepository.save(evt.get());
+                return evt.get();
+            } else {
+                return cabin;
+            }
+        } else {
+            return cabin;
+        }
+    }
+
+    public boolean delete(int idCabin) {
+        Boolean result = getCabin(idCabin).map(cabin -> {
+            cabinRepository.delete(cabin);
+            return true;
+        }).orElse(false);
+        return result;
     }
 }

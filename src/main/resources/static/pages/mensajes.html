@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <title>Reto 3</title>
+  </head>
+  <body>
+    <div class="content-page">
+      <div class="content-title">
+        <h1>Reservación de cabañas online</h1>
+      </div>
+      <div class="content-navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./categorias.html">Categorias</a></li>
+          <li><a href="./cabanias.html">Cabañas</a></li>
+          <li><a href="./clientes.html">Clientes</a></li>
+          <li><a href="./reservaciones.html">Reservaciones</a></li>
+          <li><a href="./reportes.html">Reportes</a></li>
+        </ul>
+      </div>
+
+      <!-- Message -->
+      <div class="content-general">
+        <h4>Mensajes</h4>
+        <div class="content-form">
+          <div class="content-row">
+            <div class="content-column" id="divIdMessage">
+              <div>
+                <label for="idMessage">Id mensaje</label>
+                <input
+                  type="text"
+                  name="idMessage"
+                  id="idMessage"
+                  placeholder="Id mensaje"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="messageText">Texto del mensaje</label>
+                <input
+                  type="text"
+                  name="messageText"
+                  id="messageText"
+                  placeholder="Texto del mensaje"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="clientId">Cliente</label>
+                <input
+                  type="text"
+                  name="clientId"
+                  id="clientId"
+                  placeholder="Cliente"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="cabinId">Cabaña</label>
+                <input
+                  type="text"
+                  name="cabinId"
+                  id="cabinId"
+                  placeholder="Cabaña"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-btn-actualizar" id="divbtnMessage">
+          <div class="content-row">
+            <div class="content-column">
+              <button type="button" onclick="actualizarMessage()">
+                Actualizar
+              </button>
+              <button type="button" onclick="limpiarMessage()">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="content-table">
+          <div class="content-row">
+            <div class="content-column" id="resultadoMessage"></div>
+          </div>
+        </div>
+        <div>
+          <button type="button" onclick="agregarMessage()">Guardar</button>
+          <button type="button" onclick="consultarMessage()">Consultar</button>
+        </div>
+      </div>
+
+      <div class="modal" id="modalAlertMessage">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalAlertLabel"></h2>
+          </div>
+          <div class="modal-body">
+            <p id="textMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="hiddenModal('modalAlertMessage')">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/fuctions.js"></script>
+  </body>
+</html>

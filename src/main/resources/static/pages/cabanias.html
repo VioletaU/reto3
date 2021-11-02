@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <title>Reto 3</title>
+  </head>
+  <body>
+    <div class="content-page">
+      <div class="content-title">
+        <h1>Reservación de cabañas online</h1>
+      </div>
+      <div class="content-navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./categorias.html">Categorias</a></li>
+          <li><a href="./clientes.html">Clientes</a></li>
+          <li><a href="./mensajes.html">Mensajes</a></li>
+          <li><a href="./reservaciones.html">Reservaciones</a></li>
+          <li><a href="./reportes.html">Reportes</a></li>
+        </ul>
+      </div>
+      <!-- Cabañas -->
+      <div class="content-general">
+        <h4>Cabañas</h4>
+        <div class="content-form">
+          <div class="content-row">
+            <div class="content-column" id="divIdCabin">
+              <div>
+                <label for="idCabin">id</label>
+                <input
+                  type="text"
+                  name="idCabin"
+                  id="idCabin"
+                  placeholder="Id"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="brand">Marca</label>
+                <input
+                  type="text"
+                  name="brand"
+                  id="brand"
+                  placeholder="Marca"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="rooms">Habitaciones</label>
+                <input
+                  type="number"
+                  name="rooms"
+                  id="rooms"
+                  placeholder="Habitaciones"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="content-row">
+            <div class="content-column">
+              <div>
+                <label for="nameCabin">Nombre</label>
+                <input
+                  type="text"
+                  name="nameCabin"
+                  id="nameCabin"
+                  placeholder="Nombre"
+                />
+              </div>
+            </div>
+            <div class="content-column">
+              <div>
+                <label for="descriptionCabin">Descripcion</label>
+                <input
+                  type="text"
+                  name="descriptionCabin"
+                  id="descriptionCabin"
+                  placeholder="Descripcion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="content-row">
+            <div class="content-column">
+              <div>
+                <label for="idCategoria">Categoria</label>
+                <input
+                  type="number"
+                  name="idCategoria"
+                  id="idCategoria"
+                  placeholder="Categoria"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-3" id="divbtnCabin">
+          <div class="content-row">
+            <div class="content-column">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="actualizarCabin()"
+              >
+                Actualizar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="limpirCabin()"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-3 mb-3">
+          <div class="content-row">
+            <div class="content-column" id="resultadoCabin"></div>
+          </div>
+        </div>
+        <div class="container mt-3">
+          <div class="content-row">
+            <div class="content-column">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="agregarCabin()"
+              >
+                Guardar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="consultarCabin()"
+              >
+                Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modalAlertCabin">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalAlertLabel"></h2>
+          </div>
+          <div class="modal-body">
+            <p id="textMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="hiddenModal('modalAlertCabin')">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/fuctions.js"></script>
+  </body>
+</html>
